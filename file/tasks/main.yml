@@ -4,7 +4,7 @@
 - name: Copy File War from Stage to Web (synchronize)
   synchronize:
     src: /home/samplejavacode/target/addressbook.war
-    dest: rsync://10.156.0.11/var/lib/tomcat9/webapps
+    dest: rsync://10.156.0.11/var/lib/tomcat9/webapps/addressbook.war
   delegate_to: 10.156.0.10
 
 #- name: Copy File War from BUILD to MASTER
