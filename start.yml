@@ -6,7 +6,6 @@
   roles:
    - initpackages
    - build
-   - file
 
 - name: Deploy server configuration
   hosts: deploy

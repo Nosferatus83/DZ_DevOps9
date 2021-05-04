@@ -1,14 +1,21 @@
 ---
 # tasks file for file
-- name: Copy File War from BUILD to MASTER
-  fetch:
-    src: /home/samplejavacode/target/addressbook.war
-    dest: ./
-    flat: yes
-  when: state == "Build"  
 
-- name: Copy the file from MASTER to DEPLOY
-  copy:
-    src: ./addressbook.war
-    dest: /var/lib/tomcat9/webapps
-  when: state == "Deploy"
+- name: Copy File War from Stage to Web (synchronize)
+  synchronize:
+    src: /home/samplejavacode/target/addressbook.war
+    dest: rsync://{{ ansible_all_ipv4_addresses }}/var/lib/tomcat9/webapps
+  delegate_to: build
+
+#- name: Copy File War from BUILD to MASTER
+#  fetch:
+#    src: /home/samplejavacode/target/addressbook.war
+#    dest: ./
+#    flat: yes
+#  when: state == "Build"  
+
+#- name: Copy the file from MASTER to DEPLOY
+#  copy:
+#    src: ./addressbook.war
+#    dest: /var/lib/tomcat9/webapps
+#  when: state == "Deploy"
