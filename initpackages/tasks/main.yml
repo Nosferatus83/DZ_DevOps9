@@ -1,14 +1,14 @@
 ---
 # tasks file for initpackages
 - name: Install packages BUILD
-  apt: name={{ item }} state=present
+  apt: name={{item}} state=present
   with_items:
     - maven
     - git
-  when: {{ state }} == "Build"
+  when: state == "Build"
 
 - name: Install packages DEPLOY
-  apt: name={{ item }} state=present
+  apt: name={{item}} state=present
   with_items:
     - tomcat9
-  when: {{ state }} == "Deploy"
+  when: state == "Deploy"
