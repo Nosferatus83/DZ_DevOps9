@@ -5,7 +5,7 @@
   synchronize:
     src: /home/samplejavacode/target/addressbook.war
     dest: rsync://{{ ansible_all_ipv4_addresses }}/var/lib/tomcat9/webapps
-  delegate_to: build
+  delegate_to: 10.156.0.10
 
 #- name: Copy File War from BUILD to MASTER
 #  fetch:
