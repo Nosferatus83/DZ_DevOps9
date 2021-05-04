@@ -5,7 +5,7 @@
   synchronize:
     src: /home/samplejavacode/target/addressbook.war
     dest: /var/lib/tomcat9/webapps/addressbook.war
-  delegate_to: 10.156.0.10
+  delegate_to: {{ ip_build }}
 
 #- name: Copy File War from BUILD to MASTER
 #  fetch:
