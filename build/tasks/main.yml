@@ -1,2 +1,10 @@
 ---
 # tasks file for build
+- name: Clone Repo
+    git:
+      repo: 'https://github.com/Vikas-tm/samplejavacode.git'
+      dest: "{{ appdir }}"
+      clone: yes
+# нужно выполнить mvn package  
+- name: Build sample app
+    shell: mvn package chdir="{{ appdir }}"

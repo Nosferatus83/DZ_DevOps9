@@ -1,2 +1,6 @@
 ---
 # tasks file for deploy
+- name: Ensure TomCat service is started
+  service:
+    name: tomcat9.service
+    state: started

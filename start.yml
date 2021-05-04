@@ -1,0 +1,19 @@
+---
+- name: Build server configuration
+  hosts: build
+  become: yes
+
+  roles:
+   - initpackages
+   - build
+   - file
+
+- name: Deploy server configuration
+  hosts: deploy
+  become: yes
+
+  roles:
+   - initpackages
+   - file
+   - deploy
+
