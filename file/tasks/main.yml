@@ -3,8 +3,8 @@
 
 - name: Copy File War from Stage to Web (synchronize)
   synchronize:
-    src: /home/samplejavacode/target/addressbook.war
-    dest: /var/lib/tomcat9/webapps/addressbook.war
+    src: "{{ source_folder }}"/addressbook.war
+    dest: "{{ dest_folder }}"/"{{file_name}}"
   delegate_to: "{{ ip_build }}"
 
 #- name: Copy File War from BUILD to MASTER
