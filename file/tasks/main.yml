@@ -3,12 +3,12 @@
 - name: Copy File War from BUILD to MASTER
   fetch:
     src: /home/samplejavacode/target/addressbook.war
-    dest: /
+    dest: ./
     flat: yes
   when: state == "Build"  
 
 - name: Copy the file from MASTER to DEPLOY
   copy:
-    src: /addressbook.war
+    src: ./addressbook.war
     dest: /var/lib/tomcat9/webapps
   when: state == "Deploy"
