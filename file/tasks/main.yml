@@ -5,7 +5,7 @@
   synchronize:
     src: "{{ source_folder }}/addressbook.war"
     dest: "{{ dest_folder }}/{{file_name}}"
-  delegate_to: "{{ groups['build'] }}"
+  delegate_to: "{{ groups['build'][0] }}"
 #  delegate_to: "{{ ip_build }}"
 
 #- name: Copy File War from BUILD to MASTER
